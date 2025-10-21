@@ -3,7 +3,7 @@ name: Java CI con Maven
 # Cuándo ejecutar este workflow
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, develop ] # revise si tiene que cambiar main por master
   pull_request:
     branches: [ main ]
 
@@ -16,17 +16,16 @@ jobs:
     name: Build y Test
     runs-on: ubuntu-latest
 
-    # ESTRATEGIA: Define las versiones de Java a usar
     strategy:
       matrix:
-        java-version: ['11', '17', '21']
+        java-version: [ '11', '17', '21' ]
 
     steps:
       # Paso 1: Descargar el código del repositorio
       - name: 📥 Checkout del código
         uses: actions/checkout@v4
 
-      # Paso 2: Configurar JDK
+        # Paso 2: Configurar JDK
       - name: ☕ Configurar JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v4
         with:
