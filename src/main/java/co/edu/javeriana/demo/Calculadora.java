@@ -79,8 +79,8 @@ public class Calculadora {
      * @return la raíz cuadrada de a
      */
     public double raizCuadrada(double a) {
-        //return 1;
-        return Math.sqrt(a);
+        return 1;
+        //return Math.sqrt(a);
     }
 
     /**
