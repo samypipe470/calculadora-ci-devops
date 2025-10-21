@@ -58,4 +58,16 @@ jobs:
         if: success()
         run: |
           echo " ¡Todos los tests pasaron correctamente!"
-          echo " Artefacto JAR generado y disponible"
+          echo " Artefacto JAR generado y disponible"     
+          
+strategy:
+  matrix:
+    java-version: ['11', '17', '21']
+
+steps:
+  - name: ☕ Configurar JDK ${{ matrix.java-version }}
+    uses: actions/setup-java@v4
+    with:
+      java-version: ${{ matrix.java-version }}
+      distribution: 'temurin'
+      cache: maven
