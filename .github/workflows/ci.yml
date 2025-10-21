@@ -54,7 +54,7 @@ jobs:
       - name: 📤 Subir JAR
         uses: actions/upload-artifact@v4
         with:
-          name: calculadora-jar
+          name: calculadora-jar-java-${{ matrix.java-version }}
           path: target/*.jar
           retention-days: 5
 
