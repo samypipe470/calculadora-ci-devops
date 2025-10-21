@@ -15,16 +15,21 @@ jobs:
   build:
     name: Build y Test
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        java-version: [ '11', '17', '21' ]
+
     steps:
       # Paso 1: Descargar el código del repositorio
       - name: 📥 Checkout del código
         uses: actions/checkout@v4
 
-      # Paso 2: Configurar Java JDK 17
-      - name: ☕ Configurar JDK 17
+        # Paso 2: Configurar JDK
+      - name: ☕ Configurar JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: ${{ matrix.java-version }}
           distribution: 'temurin'
           cache: maven
 
@@ -60,14 +65,3 @@ jobs:
           echo " ¡Todos los tests pasaron correctamente!"
           echo " Artefacto JAR generado y disponible"     
           
-strategy:
-  matrix:
-    java-version: ['11', '17', '21']
-
-steps:
-  - name: ☕ Configurar JDK ${{ matrix.java-version }}
-    uses: actions/setup-java@v4
-    with:
-      java-version: ${{ matrix.java-version }}
-      distribution: 'temurin'
-      cache: maven
