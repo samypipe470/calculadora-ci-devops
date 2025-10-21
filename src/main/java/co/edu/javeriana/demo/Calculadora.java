@@ -70,8 +70,8 @@ public class Calculadora {
      * @return base elevado a exponente
      */
     public double potencia(double base, double exponente) {
-        //return 1;
-        return Math.pow(base, exponente);
+        return 1;
+        //return Math.pow(base, exponente);
     }
 
     /**
