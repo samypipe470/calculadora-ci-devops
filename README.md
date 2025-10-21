@@ -73,4 +73,4 @@ Empaquetado del JAR
 Upload del artefacto
 
 👥 Autores
-Tu Nombre - Proyecto del curso de Fundamentos de Ingeniería de Software
+Samuel Felipe Manrique Vargas, Miguel Acuña, Javier Jaimes, Diego Negro - Proyecto del curso de Fundamentos de Ingeniería de Software
